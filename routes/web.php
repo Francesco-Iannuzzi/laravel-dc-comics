@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ComicController;
 use App\Http\Controllers\Guest\PageController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+// get
 Route::get('/', [PageController::class, 'index'])->name('home');
 
 
@@ -46,3 +47,7 @@ Route::get('/news', [PageController::class, 'news'])->name('news');
 
 
 Route::get('/shop', [PageController::class, 'shop'])->name('shop');
+
+
+// resource
+Route::resource('admin/comics', ComicController::class);
