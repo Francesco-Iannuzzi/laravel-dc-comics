@@ -12,6 +12,7 @@
             <table class="table table-primary">
                 <thead>
                     <tr>
+                        <th scope="col">ID</th>
                         <th scope="col">Cover</th>
                         <th scope="col">Series</th>
                         <th scope="col">Title</th>
@@ -24,7 +25,9 @@
                 <tbody>
                     @foreach ($comics as $comic)
                         <tr>
-                            <td scope="row"><img src="{{ $comic->thumb }}" alt="{{ $comic->series }}" height="70">
+                            <td>{{ $comic->id }}</td>
+                            <td scope="row">
+                                <img src="{{ $comic->thumb }}" alt="{{ $comic->series }}" height="70">
                             </td>
                             <td>{{ $comic->series }}</td>
                             <td>{{ $comic->title }}</td>
