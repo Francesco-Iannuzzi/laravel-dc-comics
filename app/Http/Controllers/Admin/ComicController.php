@@ -17,7 +17,12 @@ class ComicController extends Controller
     {
         $comics = Comic::all();
         //dd($comics);
-       return view('admin.comics.index', compact('comics'));
+        $page_title = 'Comics';
+        $dcComicsList = ['Characters', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News',];
+        $shopList = ['Shop DC', 'Shop DC Collectibles'];
+        $dcList = ['Terms Of Use', 'Privacy policy (New)', 'Ad Choices', 'Advertising', 'Jobs', 'Subscriptions', 'Talent Workshops', 'CPSC Certificates', 'Ratings', 'Shop Help', 'Contact Us',];
+        $sitesList = ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa',];
+       return view('admin.comics.index', compact('comics', 'page_title', 'dcComicsList', 'shopList', 'dcList', 'sitesList'));
     }
 
     /**
