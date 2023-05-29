@@ -32,9 +32,15 @@
                             <td>{{ $comic->price }}</td>
                             <td>{{ $comic->sale_date }}</td>
                             <td>
-                                <i class="fa-solid fa-eye"></i>
-                                <i class="fa-solid fa-pen-to-square"></i>
-                                <i class="fa-solid fa-trash"></i>
+                                <a href="{{ route('comics.show', $comic->id) }}" class="text-decoration-none text-dark">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <i class="fa-solid fa-pen-to-square"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none text-dark">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a>
                             </td>
                         </tr>
                     @endforeach
