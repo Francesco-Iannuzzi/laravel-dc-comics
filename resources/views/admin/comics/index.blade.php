@@ -2,7 +2,12 @@
 
 @section('content')
     <div class="container py-5">
-        <h1 class="mb-3">Admin Controller</h1>
+        <div class="d-flex justify-content-between">
+            <h1 class="mb-3">Admin Controller</h1>
+            <a href="{{ route('comics.create') }}" class="btn btn-dark align-self-center">
+                <i class="fa-solid fa-plus px-3"> New Comic</i>
+            </a>
+        </div>
         <div class="table-responsive">
             <table class="table table-primary">
                 <thead>
