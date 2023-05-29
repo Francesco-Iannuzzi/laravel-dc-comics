@@ -1,0 +1,10 @@
+@use '../partials_scss/variables' as *;
+
+main {
+    .jumbotron {
+        background-image: url('/resources/img/jumbotron.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 20rem;
+    }
+}

@@ -1,0 +1,61 @@
+@use '../partials_scss/variables' as *;
+
+footer {
+    .up_footer {
+        background-image: url('/resources/img/dc-logo-bg.png'), url('/resources/img/footer-bg.jpg');
+        background-position: right center, left top;
+        background-repeat: no-repeat, repeat;
+        background-color: $darker;
+
+        .footer_left {
+            color: $light;
+
+            h2 {
+                font-size: 1rem;
+            }
+
+            ul {
+                list-style: none;
+                padding: 0;
+                font-size: 0.7rem;
+
+                a {
+                    text-decoration: none;
+                    color: $icon;
+                }
+            }
+        }
+    }
+
+    .bottom_footer {
+        background-color: $dark;
+        z-index: 1;
+
+        .sign {
+            h2 {
+                font-size: 1rem;
+                color: $light;
+                padding: 0.5rem;
+                border: 2px solid $dc_color;
+            }
+
+        }
+
+        .social {
+            h2 {
+                font-size: 1rem;
+                color: $dc_color;
+            }
+
+            ul {
+                list-style: none;
+                padding-left: 1rem;
+
+                li .fa-brands {
+                    color: $icon;
+                    width: 1.5rem;
+                }
+            }
+        }
+    }
+}
