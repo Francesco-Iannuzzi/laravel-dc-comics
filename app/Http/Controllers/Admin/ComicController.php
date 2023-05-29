@@ -32,7 +32,12 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        $page_title = 'Comics';
+        $dcComicsList = ['Characters', 'Comics', 'Movies', 'TV', 'Games', 'Videos', 'News',];
+        $shopList = ['Shop DC', 'Shop DC Collectibles'];
+        $dcList = ['Terms Of Use', 'Privacy policy (New)', 'Ad Choices', 'Advertising', 'Jobs', 'Subscriptions', 'Talent Workshops', 'CPSC Certificates', 'Ratings', 'Shop Help', 'Contact Us',];
+        $sitesList = ['DC', 'MAD Magazine', 'DC Kids', 'DC Universe', 'DC Power Visa',];
+        return view('admin.comics.create', compact('page_title', 'dcComicsList', 'shopList', 'dcList', 'sitesList'));
     }
 
     /**
@@ -43,7 +48,16 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comic = new Comic();
+        $comic->title = $request->title;
+        $comic->description = $request->description;
+        $comic->thumb = $request->thumb;
+        $comic->price = $request->price;
+        $comic->series = $request->series;
+        $comic->sale_date = $request->sale_date;
+        $comic->type = $request->type;
+        $comic->save();
+        return to_route('comics.index');
     }
 
     /**
