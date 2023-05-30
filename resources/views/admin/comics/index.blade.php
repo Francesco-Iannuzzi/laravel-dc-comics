@@ -39,7 +39,8 @@
                                     class="text-decoration-none text-dark">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
-                                <a href="#" class="text-decoration-none text-dark">
+                                <a href="{{ route('admin.comics.edit', $comic->id) }}"
+                                    class="text-decoration-none text-dark">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </a>
                                 <a href="#" class="text-decoration-none text-dark">

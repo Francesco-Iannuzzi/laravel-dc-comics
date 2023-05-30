@@ -74,7 +74,8 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        $page_title = 'Admin Edit single Comic';
+        return view('admin.comics.edit', compact('comic', 'page_title'));
     }
 
     /**
