@@ -29,10 +29,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="cover" class="form-label">Cover</label>
-                <input type="text" name="cover" id="cover" class="form-control" placeholder="Add Cover Comic"
+                <label for="thumb" class="form-label">Cover</label>
+                <input type="text" name="thumb" id="thumb" class="form-control" placeholder="Add Cover Comic"
                     aria-describedby="helpId" required>
-                <small id="helpCover" class="text-muted">Type Comic's Cover Here</small>
+                <small id="helpThumb" class="text-muted">Type Comic's Cover Here</small>
             </div>
 
             <div class="mb-3">
@@ -43,10 +43,10 @@
             </div>
 
             <div class="mb-3">
-                <label for="sales_date" class="form-label">Sales Date</label>
-                <input type="date" name="sales_date" id="sales_date" class="form-control" placeholder="Add Title Comic"
+                <label for="sale_date" class="form-label">Sales Date</label>
+                <input type="date" name="sale_date" id="sale_date" class="form-control" placeholder="Add Title Comic"
                     aria-describedby="helpId" required>
-                <small id="helpSalesDate" class="text-muted">Type Comic's Sales Date Here</small>
+                <small id="helpSaleDate" class="text-muted">Type Comic's Sales Date Here</small>
             </div>
 
             <div class="mb-3">
