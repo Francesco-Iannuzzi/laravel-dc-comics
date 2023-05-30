@@ -23,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($comics as $comic)
+                    @forelse ($comics as $comic)
                         <tr>
                             <td>{{ $comic->id }}</td>
                             <td scope="row">
@@ -35,20 +35,64 @@
                             <td>{{ $comic->price }}</td>
                             <td>{{ $comic->sale_date }}</td>
                             <td>
-                                <a href="{{ route('admin.comics.show', $comic->id) }}"
-                                    class="text-decoration-none text-dark">
-                                    <i class="fa-solid fa-eye"></i>
-                                </a>
-                                <a href="{{ route('admin.comics.edit', $comic->id) }}"
-                                    class="text-decoration-none text-dark">
-                                    <i class="fa-solid fa-pen-to-square"></i>
-                                </a>
-                                <a href="#" class="text-decoration-none text-dark">
-                                    <i class="fa-solid fa-trash"></i>
-                                </a>
+                                <div class="d-flex gap-2">
+                                    <a href="{{ route('admin.comics.show', $comic->id) }}" class="btn btn-warning">
+                                        <i class="fa-solid fa-eye"></i>
+                                    </a>
+                                    <a href="{{ route('admin.comics.edit', $comic->id) }}" class="btn btn-warning">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+
+                                    <!-- Modal trigger button -->
+                                    <button type="button" class="btn btn-danger" data-bs-toggle="modal"
+                                        data-bs-target="#modal-{{ $comic->id }}">
+                                        <i class="fa-solid fa-trash"></i>
+                                    </button>
+
+                                    <!-- Modal Body -->
+                                    <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->
+                                    <div class="modal fade" id="modal-{{ $comic->id }}" tabindex="-1"
+                                        data-bs-backdrop="static" data-bs-keyboard="false" role="dialog"
+                                        aria-labelledby="modalTitle-{{ $comic->id }}" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal-sm"
+                                            role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="modalTitle-{{ $comic->id }}">Delete
+                                                        Comic</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                        aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    Are you sure you want to delete
+                                                    <strong>{{ $comic->title }}</strong>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary"
+                                                        data-bs-dismiss="modal">
+                                                        Close
+                                                    </button>
+                                                    <form action="{{ route('admin.comics.destroy', $comic->id) }}"
+                                                        method="post">
+                                                        @csrf
+
+                                                        @method('DELETE')
+                                                        <button type="submit" class="btn btn-danger">
+                                                            Delete
+                                                        </button>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </td>
                         </tr>
-                    @endforeach
+                    @empty
+                        <tr>
+                            <td scope="row">Not Comics yet</td>
+                        </tr>
+                    @endforelse
                 </tbody>
             </table>
         </div>
