@@ -56,7 +56,7 @@
                 <small id="helpDescrition" class="text-muted">Type Comic's description Here</small>
             </div>
 
-            <button type="submit" class="btn btn-warning py-2 px-4">Add</button>
+            <button type="submit" class="btn btn-warning py-2 px-4">EDIT</button>
 
         </form>
     </div>
