@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Comic;
 use Illuminate\Http\Request;
+use Illuminate\Mail\Message;
 
 class ComicController extends Controller
 {
@@ -52,7 +53,7 @@ class ComicController extends Controller
 
         Comic::create($data);
 
-        return to_route('admin.comics.index');
+        return to_route('admin.comics.index')->with('message', 'Comic Added!');
     }
 
     /**
@@ -100,7 +101,7 @@ class ComicController extends Controller
 
         $comic->update($data);
 
-        return to_route('admin.comics.index');
+        return to_route('admin.comics.index')->with('message', 'Comic Updated!');
     }
 
     /**
@@ -113,6 +114,6 @@ class ComicController extends Controller
     {
         $comic->delete();
 
-        return to_route('admin.comics.index');
+        return to_route('admin.comics.index')->with('message', 'Comic Deleted!');
     }
 }
