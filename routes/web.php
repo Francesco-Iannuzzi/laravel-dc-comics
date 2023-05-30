@@ -50,4 +50,4 @@ Route::get('/shop', [PageController::class, 'shop'])->name('shop');
 
 
 // resource
-Route::resource('admin/comics', ComicController::class);
+Route::resource('admin/comics', ComicController::class, ['as' => 'admin']);

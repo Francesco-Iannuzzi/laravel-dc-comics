@@ -4,7 +4,7 @@
     <div class="container py-5">
         <h1 class="mb-3">Admin Create</h1>
 
-        <form action="{{ route('comics.store') }}" method="post">
+        <form action="{{ route('admin.comics.store') }}" method="post">
             @csrf
 
             <div class="mb-3">

@@ -51,7 +51,7 @@ class ComicController extends Controller
         $comic->type = $request->type;
         $comic->save();
 
-        return to_route('comics.index');
+        return to_route('admin.comics.index');
     }
 
     /**
@@ -62,8 +62,8 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        $page_title = 'Admin Comic';
-        return view('admin.comics.show', compact('comic'));
+        $page_title = 'Admin single Comic';
+        return view('admin.comics.show', compact('comic', 'page_title'));
     }
 
     /**

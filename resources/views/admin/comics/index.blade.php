@@ -4,7 +4,7 @@
     <div class="container py-5">
         <div class="d-flex justify-content-between">
             <h1 class="mb-3">Admin Controller</h1>
-            <a href="{{ route('comics.create') }}" class="btn btn-dark align-self-center">
+            <a href="{{ route('admin.comics.create') }}" class="btn btn-dark align-self-center">
                 <i class="fa-solid fa-plus px-3"> New Comic</i>
             </a>
         </div>
@@ -35,7 +35,8 @@
                             <td>{{ $comic->price }}</td>
                             <td>{{ $comic->sale_date }}</td>
                             <td>
-                                <a href="{{ route('comics.show', $comic->id) }}" class="text-decoration-none text-dark">
+                                <a href="{{ route('admin.comics.show', $comic->id) }}"
+                                    class="text-decoration-none text-dark">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
                                 <a href="#" class="text-decoration-none text-dark">
