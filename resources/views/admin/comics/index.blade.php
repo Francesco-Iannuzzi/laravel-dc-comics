@@ -3,8 +3,7 @@
 @section('content')
     <div class="container py-5">
         @if (session('message'))
-            <div class="alert {{ session('message') === 'Comic Deleted!' ? 'alert-danger' : 'alert-primary' }} alert-dismissible fade show text-center"
-                role="alert">
+            <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 <strong>{{ session('message') }}</strong>
             </div>
