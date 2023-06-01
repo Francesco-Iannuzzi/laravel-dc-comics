@@ -120,7 +120,7 @@
 
             </div>
 
-            <button type="submit" class="btn btn-warning py-2 px-4">EDIT</button>
+            <button type="submit" class="btn btn-warning w-100 mt-4 py-2 px-4">EDIT</button>
 
         </form>
     </div>
