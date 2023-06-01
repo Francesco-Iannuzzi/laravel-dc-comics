@@ -43,10 +43,10 @@
                             <td>{{ $comic->sale_date }}</td>
                             <td>
                                 <div class="d-flex gap-2">
-                                    <a href="{{ route('admin.comics.show', $comic->id) }}" class="btn btn-warning">
+                                    <a href="{{ route('admin.comics.show', $comic->id) }}" class="btn btn-primary">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
-                                    <a href="{{ route('admin.comics.edit', $comic->id) }}" class="btn btn-warning">
+                                    <a href="{{ route('admin.comics.edit', $comic->id) }}" class="btn btn-primary">
                                         <i class="fa-solid fa-pen-to-square"></i>
                                     </a>
 
